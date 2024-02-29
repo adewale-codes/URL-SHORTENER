@@ -24,3 +24,16 @@ def create_url(db: Session, original_url: str, custom_alias: str = None):
     db.commit()
 
     return url_db
+
+def get_url_by_short_url(db: Session, short_url: str):
+    return db.query(URL).filter(URL.short_url == short_url).first()
+
+def get_url_analytics(db: Session, short_url: str):
+    url = get_url_by_short_url(db, short_url)
+    if url:
+        url.click_count += 1
+        db.commit()
+
+        analytics_data = {"clicks": url.click_count, "location": "Sample Location"}
+        return analytics_data
+    return None
