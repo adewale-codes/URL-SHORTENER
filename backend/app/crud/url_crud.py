@@ -39,4 +39,8 @@ def get_url_analytics(db: Session, short_url: str):
     return None
 
 def get_link_history(db: Session, user_id: int):
-    return db.query(URL).filter(URL.user_id == user_id).all()
+    return (
+        db.query(URL)
+        .filter(URL.user_id == user_id)
+        .all()
+    )
