@@ -20,7 +20,6 @@ origins = [
     "http://localhost:3001",
 ]
 
-# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -29,7 +28,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include routers
 app.include_router(url_shortener.router, prefix="")
 app.include_router(user.router, prefix="/user")
 
