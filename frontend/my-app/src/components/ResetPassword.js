@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-const baseURL = 'http://127.0.0.1:8000';
+const baseURL = 'https://scissor-na0r.onrender.com';
 
 const ResetPassword = () => {
   const [newPassword, setNewPassword] = useState('');

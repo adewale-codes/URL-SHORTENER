@@ -41,7 +41,7 @@ const App = () => {
             <Route path="/history" element={isLoggedIn ? <LinkHistory accessToken={accessToken} /> :  <Navigate to="/login" />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
           </Routes>
-          {/* <nav>
+          <nav>
             {isLoggedIn ? (
               <div>
                 <Link to="/home">Home</Link>
@@ -64,7 +64,7 @@ const App = () => {
                 </div>
               </div>
             )}
-          </nav> */}
+          </nav>
           {isLoggedIn && (
             <div>
               <CreateUrlForm accessToken={accessToken} />

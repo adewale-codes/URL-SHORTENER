@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import QRCode from 'qrcode.react';
 
-const baseURL = 'http://127.0.0.1:8000';
+const baseURL = 'https://scissor-na0r.onrender.com';
 
 const QRCodeDisplay = () => {
   const [shortUrl, setShortUrl] = useState('');
